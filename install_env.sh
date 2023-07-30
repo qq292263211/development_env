@@ -1,5 +1,7 @@
 #!/bin/bash
-cd /etc/apt/
+changeSourceList()
+{
+	cd /etc/apt/
 sudo cp sources.list sources.list.bak
 # 指定要创建的文本文件的名称和路径
 file_name="sources.list"
@@ -21,6 +23,10 @@ echo "$sourceList" > "$file_name"
 sudo apt-get update
 sudo apt-get upgrade
 echo "换源成功!"
+}
+
+echo "更新软件列表!"
+sudo apt-get update
 
 echo "开始下载ompl安装脚本!"
 
