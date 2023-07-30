@@ -25,8 +25,19 @@ sudo apt-get upgrade
 echo "换源成功!"
 }
 
+
+config_vpn()
+{
+	host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+	export ALL_PROXY="http://$host_ip:7890"
+}
+
+echo "先配置科学上网!"
+config_vpn
+
 echo "更新软件列表!"
 sudo apt-get update
+sudo apt-get upgrade
 
 echo "开始下载ompl安装脚本!"
 
