@@ -22,3 +22,11 @@ sudo apt-get update
 sudo apt-get upgrade
 echo "换源成功!"
 
+echo "开始下载ompl安装脚本!"
+
+wget https://ompl.kavrakilab.org/install-ompl-ubuntu.sh
+
+chmod u+x install-ompl-ubuntu.sh
+
+./install-ompl-ubuntu.sh --app
+
